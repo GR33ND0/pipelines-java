@@ -20,6 +20,13 @@ stages:
             displayName: tfinstall
             inputs:
               terraformVersion: 'latest'
+          - task: TerraformTask@5
+            inputs:
+              provider: 'azurerm'
+              command: 'init'
+              backendAzureRmResourceGroupName: 'rg-test-01'
+              backendAzureRmStorageAccountName: 'greenteststg'
+              backendAzureRmContainerName: 'devops'
 
           - task: TerraformTask@5
             displayName: Validate
@@ -36,6 +43,13 @@ stages:
             displayName: tfinstall
             inputs:
               terraformVersion: 'latest'
+          - task: TerraformTask@5
+            inputs:
+              provider: 'azurerm'
+              command: 'init'
+              backendAzureRmResourceGroupName: 'rg-test-01'
+              backendAzureRmStorageAccountName: 'greenteststg'
+              backendAzureRmContainerName: 'devops'
           - task: TerraformTask@5
 
           - task: TerraformTask@5
